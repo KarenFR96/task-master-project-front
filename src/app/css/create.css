@@ -1,0 +1,44 @@
+.imgCreate {
+    margin: 0;
+    padding: 0;
+    width: 60%;
+    height: 100%;
+  }
+  
+  .createTask {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+  
+  form {
+    width: 100%;
+    margin-right: 30px;
+  }
+  
+  .logo{
+    width:100%;
+    display:flex;
+    justify-content: flex-end;
+    font-weight:bolder;
+  }
+  
+  .logo h2 {
+    color:#151515;
+    font-size: 25px;
+    font-style: normal;
+    font-weight:bolder;
+    line-height: normal;
+    background: radial-gradient(#F48C40, #FEB700);
+    margin-top: 0;
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip: text;
+  }
+  
+  .btn-create-task {
+    background-color: #feb700 !important;
+    width: 100%;
+    font-weight: 600;
+  }

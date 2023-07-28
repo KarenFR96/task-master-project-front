@@ -1,0 +1,14 @@
+input {
+    width: 90%;
+    display: block;
+    padding: .2rem 0;
+    font-size: 1em;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    text-align: left !important;
+    outline: none !important;
+    background-color: transparent;
+    border: 0 !important;
+    border-bottom: gray thin solid !important;
+}
