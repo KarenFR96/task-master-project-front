@@ -6,10 +6,22 @@ import Image from "next/image";
 import InputText from "@/app/components/forms/input-text/input-text";
 import ButtonPrimary from "@/app/components/forms/button-primary/button-primary";
 import Link from "next/link";
+import { handleInput } from "@/app/core/repository/handleInput/handleInput";
+import { registerBody, validateRegisterBody } from "@/app/core/repository/register/register-body";
+import { useState } from "react";
+import { httpPost } from "@/app/core/http-request-contract";
 
 
 
 export default function Register() {
+  const [values, setValues] = useState(registerBody)
+
+  const validateLogin = async () => {
+      console.log(values)
+      let validation = validateRegisterBody(values)
+      if (typeof validation === 'string') alert(validation)
+      else httpPost("users", values).then((response: any) => { console.log(response) }).catch((err: any) => { console.log(err) });
+  }
 
   return (
     <div>
@@ -31,31 +43,31 @@ export default function Register() {
                 type="text"
                 hint="Name"
                 id="name"
-                handleInput={[]} value={""}
+                handleInput={[handleInput, values, setValues]} 
               />
               <InputText
                 className="lastName"
                 type="text"
                 hint="Last Name"
                 id="lastName"
-                handleInput={[]} value={""}
+                handleInput={[handleInput, values, setValues]} 
               />
               <InputText
-                className=""
+                className="email"
                 type="email"
                 hint="E-mail or user"
                 id="email"
-                handleInput={[]} value={""} />
+                handleInput={[handleInput, values, setValues]}  />
               <InputText
                 className="password"
                 type="password"
                 hint="Password"
                 id="password"
-                handleInput={[]} value={""}
+                handleInput={[handleInput, values, setValues]} 
               />
 
               <div>
-                <ButtonPrimary className="btn-signUp" text="Create Account" callBack={() => {}} />
+                <ButtonPrimary className="btn-signUp" text="Create Account" callBack={() => {validateLogin()}} />
               </div>
               <div className="advert-login">
                 Already have an account? <Link href={"/login"}>Log in</Link>

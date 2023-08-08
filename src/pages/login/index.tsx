@@ -1,6 +1,7 @@
 import "@/app/css/containers.css";
 import "@/app/css/login.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "@/app/globals.css"
 import Image from "next/image";
 import Link from "next/link";
 import img_login from "@/app/assets/images/LOGIN.png";
@@ -10,7 +11,7 @@ import { useState } from "react";
 import { loginBody, validateLoginBody } from "@/app/core/repository/login/login-body";
 import { handleInput } from "@/app/core/repository/handleInput/handleInput";
 import { httpPost } from "@/app/core/http-request-contract";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 
 export default function Login() {
@@ -57,7 +58,7 @@ export default function Login() {
                 id="password"
                 handleInput={[handleInput, values, setValues]} value={""}              />
               <div className="forgotPasswordL">
-                <Link href={"/forgotPassword"}>Forgot your password?</Link>
+                <Link href={"/recover"}>Forgot your password?</Link>
               </div>
               <div className="">
                 <ButtonPrimary className="btn-next" text="Next" callBack={() => {validateLogin()}} />
