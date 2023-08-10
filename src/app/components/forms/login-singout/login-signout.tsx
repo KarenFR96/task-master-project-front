@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import router from "next/router";
-import ButtonPrimary from "../button-primary/button-primary";
+import "@/app/components/forms/login-singout/login-signout.css"
+
 
 const Tasks = ()=> {
     const [user, setUser] = useState<string |null>(null);
@@ -12,16 +12,12 @@ const Tasks = ()=> {
         setUser(userName);
 
     },[]);
-    const handleSignOut = () => {
-        sessionStorage.clear();
-        router.push('/')
-    };
+
     return (
-        <div>
-            <Link href={""}>
+        <div >
+            <Link href={""} className="task-user">
                 <p className="user-name">{user}</p>
             </Link>
-            <ButtonPrimary callBack={handleSignOut} className={""} text={"Sing Out"} />
         </div>
     );
 };

@@ -62,7 +62,7 @@ export default function CreateTask(props: { task?: typeof taskModelSingle }) {
             <div className="logo">
               <h2>TaskM</h2>
             </div>
-            <form>
+            <form className="formCreate">
               <InputText
                 className="title"
                 type="text"

@@ -5,17 +5,16 @@
   height: 100%;
 }
 
-form {
-    width: 40%;
+.login {
+  width: 40%;
+}
+
+.form-login {
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
-
-.formulario {
-  width: 100%;
-  margin-right: 30px;
 }
 
 .logo{
@@ -38,7 +37,7 @@ form {
 }
 
 
-.title{
+.title-login{
   color: #151515;
   text-align: center;
   font-size: 25px;
@@ -46,14 +45,13 @@ form {
   font-weight: 700;
   line-height: normal;
   margin-bottom: 10px;
-  margin-top: 70px;
-
+  margin-top: 35px;
 }
 
 .lineTitle{
   width: 60%;
   height: 4px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   margin-top: 5px;
   margin-right: auto;
   margin-left: auto;
@@ -63,16 +61,21 @@ form {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+.email-login{
+  margin-top: 20px !important;
+}
+
 .passwordL {
+  margin-top: 15px !important;
   margin-bottom: 0px !important;
 }
 
 .forgotPasswordL {
+  width: 90%;
   display: flex;
   justify-content: flex-start;
-  padding-left: 15px;
-  margin-top: 10px;
-  margin-bottom: 60px;
+  margin-top: 5px;
+  margin-bottom: 50px;
   color: #4440F4;
   font-size: 0.6em;
   font-style: italic;
@@ -80,13 +83,17 @@ form {
   line-height: normal;
 }
 
-.register{
+.register-login{
   color: #000;
   font-size:10px;
   font-style: normal;
   font-weight: 700;
-  margin: auto;
+  margin-top:5px;
   padding-top: 5px;
+}
+
+.btn-login {
+  width: 90%;
 }
 
 .btn-next{

@@ -14,6 +14,7 @@ import { httpPost } from "@/app/core/http-request-contract";
 import { useRouter } from "next/navigation";
 
 
+
 export default function Login() {
  const router = useRouter();
   const [values, setValues] = useState(loginBody)
@@ -33,20 +34,21 @@ export default function Login() {
   return (
     <div>
       <div className="container">
+        
         <div className="container-primary mx-auto">
           <Image className="img_login" src={img_login} alt={""} />
           <div className="login">
             <div className="logo">
               <h2>TaskM</h2>
             </div>
-            <form>
-              <h2 className="title">
+            <form className="form-login">
+              <h2 className="title-login">
                 Sign in<br />
                 TaskMaster
               </h2>
               <hr className="lineTitle" />
               <InputText
-                className=""
+                className="email-login"
                 type="email"
                 hint="E-mail or user"
                 id="email"
@@ -60,10 +62,10 @@ export default function Login() {
               <div className="forgotPasswordL">
                 <Link href={"/recover"}>Forgot your password?</Link>
               </div>
-              <div className="">
+              <div className="btn-login">
                 <ButtonPrimary className="btn-next" text="Next" callBack={() => {validateLogin()}} />
               </div>
-              <div className="register">
+              <div className="register-login">
                 You are not a member yet? <Link href={"/register"}>Sign up here!</Link>
               </div>
             </form>

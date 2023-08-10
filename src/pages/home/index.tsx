@@ -2,7 +2,6 @@ import "@/app/css/containers.css";
 import "@/app/css/home.css";
 import "bootstrap/dist/css/bootstrap.css";
 import img_create_task from "@/app/assets/images/CREATE.png";
-import img_profile_photo from "@/app/assets/images/PROFILE-PHOTO.png";
 import img_create_plus from "@/app/assets/images/CREATE-PLUS.png";
 import Image from "next/image";
 import ButtonPrimary from "@/app/components/forms/button-primary/button-primary";
@@ -11,6 +10,7 @@ import { useState } from "react";
 import React from "react";
 import { httpGet } from "@/app/core/http-request-contract";
 import ContainerTask from "@/app/components/container-task/container-task";
+import Tasks from "@/app/components/forms/login-singout/login-signout";
 
 export const taskModelSingle = {
   id: 1,
@@ -41,24 +41,30 @@ export default function Home() {
   <ContainerTask key={task.id} task={task} />
 );
 
-const handleSignOut = () => {
-  //COMPLETAR
-  router.push('/login'); 
+  const handleSignOut = () => {
+    sessionStorage.removeItem("user");
+    router.push('/')
 };
 
 
   return (
     <div>
       <div className="container">
-        <div className="container-primary mx-auto">
+        <div className="container-primary-home mx-auto">
+          
           <Image className="img_create_task" src={img_create_task} alt={""} />
           <div className="create_task">
+
+            <div className="home-sign-out">
             <div className="sign-out" onClick={handleSignOut}>Sign out</div>
-            <Image
-              className="profile-photo"
-              src={img_profile_photo}
-              alt=""
-            ></Image>
+            </div>
+           
+            <div className="logo-home">
+              <h2>TaskM</h2>
+            </div>
+
+           <div className="msg-user">Hi <Tasks/> Welcome!</div> 
+       
             <div className="">
               {tasks.length > 0 ? (
                 <div className="row">{results}</div>
@@ -82,9 +88,6 @@ const handleSignOut = () => {
                 router.push("/task/create");
               }}
             />
-            <div className="logo">
-              <h2>TaskM</h2>
-            </div>
           </div>
         </div>
       </div>

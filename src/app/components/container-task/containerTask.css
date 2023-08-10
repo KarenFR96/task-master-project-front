@@ -7,10 +7,15 @@
     border-radius: 15px;
 }
 
-.titleT {
-    color: black !important;
+.title-task {
+    color: rgb(46, 45, 45) !important;
     border-color: #f0cfb6!important;
     background-color: #f0cfb6!important;
+    font-weight: 800;
+    text-shadow: 7px 4px 5px rgb(255, 153, 0);
+    letter-spacing: 1px;
+    font-family: monospace;
+    font-size: 22px;
 }
 
 .imgC {
@@ -25,22 +30,51 @@
     width: 15px;
 }
 
-.btn {
+
+.edit-task {
+    width: 150px !important;
     height: 30px;
-    color: white;
-    padding:  6px;
-    margin: 8px;
+    margin-left: 2px;
 }
 
-.btnE {
+.edit-task:hover{
+    color: black;
+}
+
+.info-task{
+    border-radius: 6px;
+    padding-top: 8px !important;
+    margin-right: 2px;
+}
+
+.detail-task {
+    background-color: #f0cfb6 !important;
+}
+
+.detail-task-title{
+    color: rgb(46, 45, 45) !important;
+    border-color: #f0cfb6!important;
+    background-color: #f0cfb6!important;
+    font-weight: 800;
+    text-shadow: 7px 4px 5px rgb(255, 153, 0);
+    letter-spacing: 1px;
+    font-family: monospace;
+    font-size: 22px;
+
     
 }
 
 
 .btnItems{
-    
     display: flex;
-    justify-content: center;
+    justify-content:center;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
 }
 
 

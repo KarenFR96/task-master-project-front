@@ -10,18 +10,27 @@ import { handleInput } from "@/app/core/repository/handleInput/handleInput";
 import { registerBody, validateRegisterBody } from "@/app/core/repository/register/register-body";
 import { useState } from "react";
 import { httpPost } from "@/app/core/http-request-contract";
-
-
+import Swal from "sweetalert2";
+import router from "next/router";
 
 export default function Register() {
   const [values, setValues] = useState(registerBody)
 
   const validateLogin = async () => {
-      console.log(values)
-      let validation = validateRegisterBody(values)
-      if (typeof validation === 'string') alert(validation)
-      else httpPost("users", values).then((response: any) => { console.log(response) }).catch((err: any) => { console.log(err) });
-  }
+    console.log(values)
+    let validation = validateRegisterBody(values)
+    if (typeof validation === 'string') alert(validation)
+    else httpPost("users", values).then((response: any) => { 
+          Swal.fire({
+            title: 'Success Registration!',
+            width: 600,
+            padding: '3em',
+            color: '#F48C40',
+          })
+          console.log(response) 
+          router.push("/login");})
+          .catch((err: any) => { console.log(err) });
+}
 
   return (
     <div>
